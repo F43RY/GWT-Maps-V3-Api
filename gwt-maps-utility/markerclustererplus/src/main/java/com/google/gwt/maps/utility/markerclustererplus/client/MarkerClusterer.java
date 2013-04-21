@@ -25,83 +25,107 @@ import com.google.gwt.core.client.JsArray;
 import com.google.gwt.maps.client.MapWidget;
 import com.google.gwt.maps.client.overlays.Marker;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class MarkerClusterer extends JavaScriptObject {
 
-  protected MarkerClusterer() {
-  }
+	protected MarkerClusterer() {
+	}
 
-  public static MarkerClusterer newInstance(MapWidget widget) {
-    return createJso(widget.getJso(), JavaScriptObject.createArray(), MarkerClustererOptions.newInstance());
-  }
+	public static MarkerClusterer newInstance(MapWidget widget) {
+		return createJso(widget.getJso(), JavaScriptObject.createArray(), MarkerClustererOptions.newInstance());
+	}
 
-  public static MarkerClusterer newInstance(MapWidget widget, Collection<Marker> markers) {
-    return createJso(widget.getJso(), JsUtil.toArray(markers), MarkerClustererOptions.newInstance());
-  }
+	public static MarkerClusterer newInstance(MapWidget widget, Collection<Marker> markers) {
+		return createJso(widget.getJso(), JsUtil.toArray(markers), MarkerClustererOptions.newInstance());
+	}
 
-  public static MarkerClusterer newInstance(MapWidget widget, MarkerClustererOptions options) {
-    return createJso(widget.getJso(), JavaScriptObject.createArray(), options);
-  }
+	public static MarkerClusterer newInstance(MapWidget widget, MarkerClustererOptions options) {
+		return createJso(widget.getJso(), JavaScriptObject.createArray(), options);
+	}
 
-  public static MarkerClusterer newInstance(MapWidget widget, Collection<Marker> markers, MarkerClustererOptions options) {
-    return createJso(widget.getJso(), JsUtil.toArray(markers), options);
-  }
+	public static MarkerClusterer newInstance(MapWidget widget, Collection<Marker> markers, MarkerClustererOptions options) {
+		return createJso(widget.getJso(), JsUtil.toArray(markers), options);
+	}
 
-  private static native MarkerClusterer createJso(JavaScriptObject map, JavaScriptObject markers, JavaScriptObject options) /*-{
+	private static native MarkerClusterer createJso(JavaScriptObject map, JavaScriptObject markers, JavaScriptObject options) /*-{
       return new $wnd.MarkerClusterer(map, markers, options);
   }-*/;
 
-  public final void addMarker(Marker marker) {
-    addMarker(marker, false);
-  }
+	public final void addMarker(Marker marker) {
+		addMarker(marker, false);
+	}
 
-  public final native void addMarker(Marker marker, boolean noDraw) /*-{
+	public final native void addMarker(Marker marker, boolean noDraw) /*-{
       this.addMarker(marker, noDraw);
   }-*/;
 
-  public final void addMarkers(Collection<Marker> markers) {
-    this.addMarkers(markers, false);
-  }
+	public final void addMarkers(Collection<Marker> markers) {
+		this.addMarkers(markers, false);
+	}
 
-  public final void addMarkers(Collection<Marker> markers, boolean noDraw) {
-    this.addMarkers(JsUtil.toArray(markers), noDraw);
-  }
+	public final void addMarkers(Collection<Marker> markers, boolean noDraw) {
+		this.addMarkers(JsUtil.toArray(markers), noDraw);
+	}
 
-  public final native void addMarkers(JsArray<Marker> markers, boolean noDraw) /*-{
+	public final native void addMarkers(JsArray<Marker> markers, boolean noDraw) /*-{
       this.addMarkers(markers, noDraw);
   }-*/;
 
-  public final native void clearMarkers() /*-{
+	public final native void clearMarkers() /*-{
       this.clearMarkers();
   }-*/;
 
-  public final void removeMarker(Marker marker) {
-    removeMarker(marker, false);
-  }
+	public final void removeMarker(Marker marker) {
+		removeMarker(marker, false);
+	}
 
-  public final native void removeMarker(Marker marker, boolean noDraw) /*-{
+	public final native void removeMarker(Marker marker, boolean noDraw) /*-{
       this.removeMarker(marker, noDraw);
   }-*/;
 
-  public final void removeMarkers(Collection<Marker> markers) {
-    this.removeMarkers(markers, false);
-  }
+	public final void removeMarkers(Collection<Marker> markers) {
+		this.removeMarkers(markers, false);
+	}
 
-  public final void removeMarkers(Collection<Marker> markers, boolean noDraw) {
-    this.removeMarkers(JsUtil.toArray(markers), noDraw);
-  }
+	public final void removeMarkers(Collection<Marker> markers, boolean noDraw) {
+		this.removeMarkers(JsUtil.toArray(markers), noDraw);
+	}
 
-  public final native void removeMarkers(JsArray<Marker> markers, boolean noDraw) /*-{
+	public final native void removeMarkers(JsArray<Marker> markers, boolean noDraw) /*-{
       this.removeMarkers(markers, noDraw);
   }-*/;
 
-  public final native void fitMapToMarkers() /*-{
+	public final native void fitMapToMarkers() /*-{
       this.fitMapToMarkers();
   }-*/;
 
-  public final native void repaint() /*-{
+	public final native void repaint() /*-{
       this.repaint();
   }-*/;
+
+	public final native void setMaxZoom(int number)/*-{
+	this.setMaxZoom(number);
+}-*/;
+
+	public final native void fitMapToMarkers() /*-{
+    this.fitMapToMarkers();
+}-*/;
+
+
+	private final native JsArray<Marker> getMarkers() /*-{
+			return this.getMarkers();		
+		}-*/;
+
+	public final List<Marker> getMarkersInList(){
+		JsArray<Marker> markers = getMarkers();
+		List<Marker> marks = new ArrayList<Marker>();
+		for(int x = 0; x < markers.length(); x++){
+			marks.add(markers.get(x));
+		}
+		return marks;
+	}
 
 }

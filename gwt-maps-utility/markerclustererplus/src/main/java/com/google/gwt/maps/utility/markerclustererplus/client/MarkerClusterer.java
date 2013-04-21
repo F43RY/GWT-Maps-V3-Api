@@ -109,11 +109,10 @@ public class MarkerClusterer extends JavaScriptObject {
 	public final native void setMaxZoom(int number)/*-{
 	this.setMaxZoom(number);
 }-*/;
-
-	public final native void fitMapToMarkers() /*-{
-    this.fitMapToMarkers();
+	
+	public final native void setMinimumClusterSize(int number)/*-{
+	this.setMinimumClusterSize(number);
 }-*/;
-
 
 	private final native JsArray<Marker> getMarkers() /*-{
 			return this.getMarkers();		

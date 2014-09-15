@@ -58,7 +58,7 @@ public class MVCObject<T extends JavaScriptObject> extends JavaScriptObject {
    * @param key
    * @param target
    */
-  public final native void bindTo(String key, MVCObject<T> target) /*-{
+  public final native void bindTo(String key, MVCObject<?> target) /*-{
     this.bindTo(key, target); 
   }-*/;
   
@@ -68,7 +68,7 @@ public class MVCObject<T extends JavaScriptObject> extends JavaScriptObject {
    * @param target
    * @param targetKey
    */
-  public final native void bindTo(String key, MVCObject<T> target, String targetKey) /*-{
+  public final native void bindTo(String key, MVCObject<?> target, String targetKey) /*-{
     this.bindTo(key, target, targetKey); 
   }-*/;
   
@@ -79,7 +79,7 @@ public class MVCObject<T extends JavaScriptObject> extends JavaScriptObject {
    * @param targetKey
    * @param noNotify
    */
-  public final native void bindTo(String key, MVCObject<T> target, String targetKey, boolean noNotify) /*-{
+  public final native void bindTo(String key, MVCObject<?> target, String targetKey, boolean noNotify) /*-{
     this.bindTo(key, target, targetKey, noNotify); 
   }-*/;
   
@@ -95,10 +95,10 @@ public class MVCObject<T extends JavaScriptObject> extends JavaScriptObject {
    * Gets a value.
    * @param key
    */
-  public final native T get(String key) /*-{
+  public final native <U> U get(String key) /*-{
     return this.get(key);
   }-*/;
-  
+
   /**
    * Notify all observers of a change on this property. This notifies both objects that are bound to the object's property as well as the object that it is bound to.
    * @param key
@@ -112,35 +112,16 @@ public class MVCObject<T extends JavaScriptObject> extends JavaScriptObject {
    * @param key
    * @param value
    */
-  public final native void set(String key, T value) /*-{
+  public final native void set(String key, Object value) /*-{
     this.set(key, value);
   }-*/;
-  
-  /**
-   * Sets a value as String.
-   * 
-   * @param key
-   * @param value
-   */
-  public final native void set(String key, String value) /*-{
-    this.set(key, value);
-  }-*/;
-  
-  /**
-   * Sets a value as Number.
-   * 
-   * @param key
-   * @param value
-   */
-  public final native void set(String key, Number value) /*-{
-    this.set(key, value);
-  }-*/;
+
   
   /**
    * Sets a collection of key-value pairs.
    * @param values
    */
-  public final native void setValues(HashMap<String, String> values) /*-{
+  public final native void setValues(HashMap<String, ?> values) /*-{
     this.setValues(values);
   }-*/;
   

@@ -48,14 +48,14 @@ public class MapTypeRegistry extends MVCObject<MapTypeRegistry> {
     return new $wnd.google.maps.MapTypeRegistry();
   }-*/;
 
-  /**
-   * Sets the registry to associate the passed string identifier with the passed MapType.
-   * 
-   * @param id
-   * @param mapType is Object because of limitations of JSO's and interfaces in GWT
-   */
-  public final native void set(String id, Object mapType) /*-{
-    this.set(id, mapType);
-  }-*/;
+//  /**
+//   * Sets the registry to associate the passed string identifier with the passed MapType.
+//   * 
+//   * @param id
+//   * @param mapType is Object because of limitations of JSO's and interfaces in GWT
+//   */
+//  public final native void set(String id, Object mapType) /*-{
+//    this.set(id, mapType);
+//  }-*/;
 
 }

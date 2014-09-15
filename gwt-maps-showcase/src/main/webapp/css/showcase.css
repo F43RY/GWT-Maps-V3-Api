@@ -21,64 +21,75 @@ html {
 	width: 100%;
 	height: 100%;
 	margin: 0;
-    padding: 0;
-    /* border:1px solid #FF0000; */
+	padding: 0;
+	/* border:1px solid #FF0000; */
 }
 
 body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
-    padding: 0;
-    /* border:1px solid blue; */
+	padding: 0;
+	/* border:1px solid blue; */
 }
 
 /* Styled maps example */
 .styledExample {
-	margin-bottom:5px;	
+	margin-bottom: 5px;
 }
 
 .styledExample span {
-	border-radius:5px;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	padding:3px;
-	color:white;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 3px;
+	color: white;
 }
+
 .styledExample span:nth-child(1) {
-	background-color:blue;
+	background-color: blue;
 }
+
 .styledExample span:nth-child(2) {
-	background-color:black;
+	background-color: black;
 }
+
 .styledExample span:nth-child(3) {
-	background-color:red;
+	background-color: red;
 }
 
 .test1 {
-  border:1px solid #FF0000;
+	border: 1px solid #FF0000;
 }
+
 .test2 {
-  border:1px solid blue;
+	border: 1px solid blue;
 }
+
 .test3 {
-  border:1px solid #00FF00;	
+	border: 1px solid #00FF00;
 }
+
 .test4 {
-  border:1px solid #000000;
+	border: 1px solid #000000;
 }
+
 .test5 {
-  border:1px solid grey;
+	border: 1px solid grey;
 }
+
 .test6 {
-  border:1px solid #0000FF;
+	border: 1px solid #0000FF;
 }
+
 .test7 {
-  border:1px solid #EFEFEF;
+	border: 1px solid #EFEFEF;
 }
+
 .test8 {
-  border:1px solid #FFFF00;
+	border: 1px solid #FFFF00;
 }
+
 .dialogTour {
 	background-color: rgba(244, 228, 73, 1.0);
 	color: black;
@@ -86,42 +97,40 @@ body {
 	padding: 0;
 	margin-left: 5px;
 	margin-top: 5px;
-	
 }
 
 /** Custom overlay CSS **/
-.toggleButton
-{
-    background-color            :    #ccc;
-    color                       :    #000;
-    border                      :    1px solid #666;
-    cursor                      :    hand;
-    cursor                      :    pointer;
-    font-size                   :    75%;
-    margin                      :    3px 1px;
-    padding                     :    1px 10px;
-    width                       :    150px;
-    text-align                  :    center;
+.toggleButton {
+	background-color: #ccc;
+	color: #000;
+	border: 1px solid #666;
+	cursor: hand;
+	cursor: pointer;
+	font-size: 75%;
+	margin: 3px 1px;
+	padding: 1px 10px;
+	width: 150px;
+	text-align: center;
 }
-.toggleButton-up-hovering
-{
-    padding                     :    0px 9px;
-    color                       :    #fff;
-    border-top                  :    2px solid #fff;
-    border-left                 :    2px solid #fff;
-    border-right                :    2px solid #888;
-    border-bottom               :    2px solid #888;
+
+.toggleButton-up-hovering {
+	padding: 0px 9px;
+	color: #fff;
+	border-top: 2px solid #fff;
+	border-left: 2px solid #fff;
+	border-right: 2px solid #888;
+	border-bottom: 2px solid #888;
 }
-.toggleButton-down, .toggleButton-down-hovering
-{
-    background-color            :    #888;
-    padding                     :    0px 9px;
-    border-top                  :    2px solid #333;
-    border-left                 :    2px solid #333;
-    border-right                :    2px solid #ccc;
-    border-bottom               :    2px solid #ccc;
+
+.toggleButton-down,.toggleButton-down-hovering {
+	background-color: #888;
+	padding: 0px 9px;
+	border-top: 2px solid #333;
+	border-left: 2px solid #333;
+	border-right: 2px solid #ccc;
+	border-bottom: 2px solid #ccc;
 }
 
 .customOverlay {
-	background-color            :    #fff;
+	background-color: #fff;
 }
